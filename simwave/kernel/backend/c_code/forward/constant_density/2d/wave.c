@@ -1,23 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <sys/time.h>
-
-#if defined(CPU_OPENMP) || defined(GPU_OPENMP)
-    #include <omp.h>
-#endif
-
-#if defined(GPU_OPENACC)
-    #include <openacc.h>
-#endif
-
-// use single (float) or double precision
-// according to the value passed in the compilation cmd
-#if defined(FLOAT)
-   typedef float f_type;
-#elif defined(DOUBLE)
-   typedef double f_type;
-#endif
+#include "wave.h"
 
 // forward_2D_constant_density
 double forward(f_type *u, f_type *velocity, f_type *damp,

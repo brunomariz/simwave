@@ -208,17 +208,23 @@ args = {
 }
 
 import json
+
+class NumpyArrayEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        else:
+            return super(NumpyArrayEncoder, self).default(obj)
+
 for arg in args:
     with open(f"args/{args[arg]['name']}", "w+") as f:
-        value = args[arg]["value"]
-        try:
-            value = json.dumps(value)
-        except TypeError:
-            if type(value)=="ndarray":
-                value = json.dumps(value.tolist())
-            elif type(value) == "tuple":
-                value = json.dumps(list(value))
-        f.write(str(value))
+        data = {"value": args[arg]["value"]}
+        encodedData = json.dumps(data, cls=NumpyArrayEncoder) 
+        f.write(str(encodedData))
         print(args[arg]["name"])
 
 # run the forward

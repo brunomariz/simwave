@@ -1,3 +1,6 @@
+# Author: Bruno Mariz
+# Run: python3 acoustic_2D_generate_args.py
+
 from simwave import (
     SpaceModel, TimeModel, RickerWavelet, Solver, Compiler,
     Receiver, Source, plot_wavefield, plot_shotrecord, plot_velocity_model

@@ -2,15 +2,6 @@
 
 #include "../../simwave/kernel/backend/c_code/forward/constant_density/2d/wave.h"
 
-#define U_SIZE 300
-#define VELOCITY_SIZE 300
-#define DAMP_SIZE 300
-#define WAVELET_SIZE 300
-#define COEFF_SIZE 300
-#define BOUNDARY_SIZE 300
-#define SRC_POINTS_INTERVAL_SIZE 300
-#define SRC_POINTS_VALUES_SIZE 300
-
 int main() {
     // Declare variables
     f_type *u;

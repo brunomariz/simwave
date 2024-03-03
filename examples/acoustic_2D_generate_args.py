@@ -1,4 +1,5 @@
 # Author: Bruno Mariz
+# Before running: create /args directory
 # Run: python3 acoustic_2D_generate_args.py
 
 from simwave import (

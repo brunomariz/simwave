@@ -51,7 +51,7 @@ int main() {
         }
     }
 
-    // ## velocity
+    // ### velocity
     const int velocity_x_size = 517;
     const int velocity_z_size = 517;
     velocity = malloc(sizeof(f_type) * velocity_x_size * velocity_z_size);

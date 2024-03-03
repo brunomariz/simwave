@@ -10,3 +10,4 @@ simwave.egg-info/*
 .ipynb_checkpoints
 args/
 *.zip
+venv/

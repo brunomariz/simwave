@@ -11,3 +11,4 @@ simwave.egg-info/*
 args/
 *.zip
 venv/
+a.out

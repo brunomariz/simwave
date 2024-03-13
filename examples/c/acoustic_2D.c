@@ -1,6 +1,4 @@
-#include <stdio.h>
-
-#include "../../simwave/kernel/backend/c_code/forward/constant_density/2d/wave.h"
+#include "acoustic_2D.h"
 
 int main() {
     // ## Declare variables
@@ -59,6 +57,16 @@ int main() {
         for (size_t z = 0; z < velocity_z_size; z++) {
             velocity[x * velocity_z_size + z] =
                 x > velocity_x_size ? 1500 : 2000;
+        }
+    }
+
+    // ### damp
+    const int damp_x_size = 517;
+    const int damp_z_size = 517;
+    damp = malloc(sizeof(f_type) * damp_x_size * damp_z_size);
+    for (size_t x = 0; x < damp_x_size; x++) {
+        for (size_t z = 0; z < damp_z_size; z++) {
+            damp[x * damp_z_size + z] = 0;
         }
     }
 

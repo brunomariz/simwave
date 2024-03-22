@@ -4,7 +4,7 @@
 *.png
 dist/
 build/
-tmp/*
+tmp/
 /src/wavefield/*
 simwave.egg-info/*
 .ipynb_checkpoints
